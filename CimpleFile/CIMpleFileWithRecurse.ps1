@@ -35,6 +35,10 @@ function Get-CIMFile
     Begin
     {
         Write-Verbose -Message "Reading files using the following parameters $($PSBoundParameters | Out-String)"
+        if(-not $PSBoundParameters.ContainsKey('Path'))
+        {
+            $Path = (Get-Location).Path
+        }
     }
     Process{
         # Set Path Search Operator and Ending
@@ -49,7 +53,11 @@ function Get-CIMFile
         }
 
         # Format the path string
-        $PathQualifier = ($Path | Split-Path -NoQualifier).Replace('\','\\') + $PathEnding
+        $PathQualifier = ($Path | Split-Path -NoQualifier).Replace('\','\\')
+        if(-not $PathQualifier.EndsWith('\\'))
+        {
+            $PathQualifier = $PathQualifier + $PathEnding
+        }
         if($DriveQualifier)
         {
             $FilterString = "Drive = `'$DriveQualifier`' AND Path $PathOperator `'$PathQualifier`'"
