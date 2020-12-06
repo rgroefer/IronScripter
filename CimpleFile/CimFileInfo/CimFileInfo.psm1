@@ -90,6 +90,29 @@ function Get-CIMFile
         }
     }
     End{}
+    <#
+    .SYNOPSIS
+        Retrieves files and folders
+    .DESCRIPTION
+        A CIM-based alternative to Get-ChildItem.  Offers you the recurse action, which is nice.
+    .PARAMETER Path
+        The path to the location where the files should be retrieved.
+    .PARAMETER Recurse
+        Switch.  Tells the function to continue retrieving all files and folders below the specified location.
+    .EXAMPLE
+        PS> Get-CIMFile -Path D:\Temp -Recurse
+
+        Name                 FileSize  isHidden     isCompressed isEncrypted  Path
+        ----                 --------  --------     ------------ -----------  ----
+        logs                 0         False        False        False        D:\Temp\Logs
+        logs2019             0         False        False        False        D:\Temp\Logs2019
+        sim                  0         False        False        False        D:\Temp\SIM
+        logs2019             644       False        False        False        D:\Temp\Logs2019.zip
+        newimage             33057     False        False        False        D:\Temp\newimage.jpg
+        nonsensedoc-047c38   5199      False        False        True         D:\Temp\NonsenseDoc-047c…
+        nonsensedoc-3962ff   7952      False        True         False        D:\Temp\NonsenseDoc-3962…
+        nonsensedoc-4a6ad9   3440      False        False        False        D:\Temp\NonsenseDoc-4a6a…
+    #>
 }
 
 # CimFileInfo class
