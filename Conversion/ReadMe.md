@@ -11,6 +11,9 @@ This tool can accept the object in the pipeline, but you should limit that to a 
 
 ## Notes
 
+### Method Code
+The user may provide method code with a hashtable for the MethodCode parameter.
+
 ### Properties
 The class properties are defined by type and name.  This was the focus of the challenge.
 
