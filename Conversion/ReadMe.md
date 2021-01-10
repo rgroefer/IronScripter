@@ -1,6 +1,6 @@
 # PowerShell Class Conversion
 ---
-###Iron Scripter Challenge
+### Iron Scripter Challenge
 Created as a response to the **[Iron Scripter Challenge](https://ironscripter.us/a-powershell-conversion-challenge/)** calling for us to create a tool that will accept an object and create a PowerShell based class definition from it.
 
 ## Purpose
